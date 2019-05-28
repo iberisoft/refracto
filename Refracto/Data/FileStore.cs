@@ -9,6 +9,10 @@ namespace Refracto.Data
     {
         public FileStore(string basePath)
         {
+            if (!Directory.Exists(basePath))
+            {
+                throw new ArgumentException("Directory not found", nameof(basePath));
+            }
             BasePath = basePath;
         }
 
