@@ -25,7 +25,7 @@ namespace Refracto
             container.Singleton<IEventAggregator, EventAggregator>();
             container.PerRequest<IShell, ShellViewModel>();
             container.Instance<IStore>(new FileStore(Properties.Settings.Default.FileStorePath));
-            container.Singleton<IDevice, DeviceSimulator>();
+            container.Singleton<IDevice, DeviceEmulator>();
         }
 
         protected override object GetInstance(Type service, string key)

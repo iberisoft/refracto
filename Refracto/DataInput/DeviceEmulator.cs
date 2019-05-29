@@ -4,7 +4,7 @@ using Refracto.Data;
 
 namespace Refracto.DataInput
 {
-    class DeviceSimulator : IDevice
+    class DeviceEmulator : IDevice
     {
         int m_Index;
 

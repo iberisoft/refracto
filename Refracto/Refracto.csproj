@@ -79,7 +79,7 @@
       <DependentUpon>ChartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChartViewModel.cs" />
-    <Compile Include="DataInput\DeviceSimulator.cs" />
+    <Compile Include="DataInput\DeviceEmulator.cs" />
     <Compile Include="DataInput\IDevice.cs" />
     <Compile Include="Data\IStore.cs" />
     <Compile Include="Data\FileStore.cs" />
