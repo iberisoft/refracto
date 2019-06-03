@@ -23,12 +23,15 @@ namespace Refracto.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\FS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string FileStorePath {
             get {
                 return ((string)(this["FileStorePath"]));
+            }
+            set {
+                this["FileStorePath"] = value;
             }
         }
     }
