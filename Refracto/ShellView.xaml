@@ -24,6 +24,9 @@
                 <Button Name="SaveItem" Content="Save" />
                 <Button Name="DeleteItem" Content="Delete" />
             </UniformGrid>
+            <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+                <Button Name="Config" Content="Configuration" />
+            </UniformGrid>
             <ListView SelectionMode="Single" ItemsSource="{Binding Source={StaticResource Items}}" SelectedItem="{Binding Path=SelectedItem}">
                 <ListView.View>
                     <GridView>

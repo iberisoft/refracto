@@ -17,6 +17,11 @@
                 <Setter Property="Margin" Value="3" />
                 <Setter Property="Padding" Value="5" />
             </Style>
+            <Style x:Key="BrowseButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                <Setter Property="Margin" Value="3" />
+                <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource Mode=Self}, Path=ActualHeight}" />
+                <Setter Property="Content" Value="..." />
+            </Style>
             <Style TargetType="TextBox">
                 <Setter Property="Margin" Value="3" />
             </Style>

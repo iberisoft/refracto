@@ -7,16 +7,14 @@ namespace Refracto.Data
 {
     class FileStore : IStore
     {
-        public FileStore(string basePath)
+        public string BasePath
         {
-            if (!Directory.Exists(basePath))
+            get
             {
-                throw new ArgumentException("Directory not found", nameof(basePath));
+                var path = Properties.Settings.Default.FileStorePath;
+                return Directory.Exists(path) ? path : AppDomain.CurrentDomain.BaseDirectory;
             }
-            BasePath = basePath;
         }
-
-        public string BasePath { get; }
 
         private string GetFilePath(string id) => Path.Combine(BasePath, id + ".csv");
 

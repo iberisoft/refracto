@@ -71,6 +71,7 @@ namespace Refracto
                     NotifyOfPropertyChange(() => CanStopRunning);
                     NotifyOfPropertyChange(() => CanSaveItem);
                     NotifyOfPropertyChange(() => CanDeleteItem);
+                    NotifyOfPropertyChange(() => CanConfig);
                 }
             }
         }
@@ -164,6 +165,21 @@ namespace Refracto
             {
                 m_Store.Delete(SelectedItem.Id);
                 Items.Remove(SelectedItem);
+            }
+        }
+
+        public bool CanConfig => RunningItem == null;
+
+        public void Config()
+        {
+            var config = new ConfigViewModel(m_DialogManager);
+            config.StorePath = Properties.Settings.Default.FileStorePath;
+            if (m_WindowManager.ShowDialog(config) == true)
+            {
+                Properties.Settings.Default.FileStorePath = config.StorePath;
+                Properties.Settings.Default.Save();
+                m_Items = null;
+                NotifyOfPropertyChange(() => Items);
             }
         }
     }

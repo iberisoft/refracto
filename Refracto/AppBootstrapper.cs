@@ -24,7 +24,7 @@ namespace Refracto
             container.Singleton<IDialogManager, DialogManager>();
             container.Singleton<IEventAggregator, EventAggregator>();
             container.PerRequest<IShell, ShellViewModel>();
-            container.Instance<IStore>(new FileStore(Properties.Settings.Default.FileStorePath));
+            container.Singleton<IStore, FileStore>();
             container.Singleton<IDevice, DeviceEmulator>();
         }
 

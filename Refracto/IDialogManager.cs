@@ -9,5 +9,7 @@ namespace Refracto
         bool ConfirmDelete(Timeline timeline);
 
         void WarnExist(Timeline timeline);
+
+        string BrowseFolder();
     }
 }
