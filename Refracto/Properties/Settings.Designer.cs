@@ -34,5 +34,17 @@ namespace Refracto.Properties {
                 this["FileStorePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SerialPort {
+            get {
+                return ((string)(this["SerialPort"]));
+            }
+            set {
+                this["SerialPort"] = value;
+            }
+        }
     }
 }

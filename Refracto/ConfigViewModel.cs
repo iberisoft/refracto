@@ -34,6 +34,22 @@ namespace Refracto
             }
         }
 
+        public string[] AllSerialPorts => System.IO.Ports.SerialPort.GetPortNames();
+
+        string m_SerialPort = "";
+
+        public string SerialPort
+        {
+            get => m_SerialPort;
+            set
+            {
+                if (Set(ref m_SerialPort, value))
+                {
+                    NotifyOfPropertyChange();
+                }
+            }
+        }
+
         public void Accept()
         {
             TryClose(true);

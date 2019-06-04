@@ -179,9 +179,11 @@ namespace Refracto
         {
             var config = new ConfigViewModel(m_DialogManager);
             config.StorePath = Properties.Settings.Default.FileStorePath;
+            config.SerialPort = Properties.Settings.Default.SerialPort;
             if (m_WindowManager.ShowDialog(config) == true)
             {
                 Properties.Settings.Default.FileStorePath = config.StorePath;
+                Properties.Settings.Default.SerialPort = config.SerialPort;
                 Properties.Settings.Default.Save();
                 m_Items = null;
                 NotifyOfPropertyChange(() => Items);

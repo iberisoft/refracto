@@ -25,6 +25,9 @@
             <Style TargetType="TextBox">
                 <Setter Property="Margin" Value="3" />
             </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Margin" Value="3" />
+            </Style>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
     </Application.Resources>
