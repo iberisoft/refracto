@@ -12,14 +12,12 @@ namespace Refracto
         readonly IWindowManager m_WindowManager;
         readonly IDialogManager m_DialogManager;
         readonly IStore m_Store;
-        readonly IDevice m_Device;
 
-        public ShellViewModel(IWindowManager windowManager, IDialogManager dialogManager, IStore store, IDevice device)
+        public ShellViewModel(IWindowManager windowManager, IDialogManager dialogManager, IStore store)
         {
             m_WindowManager = windowManager;
             m_DialogManager = dialogManager;
             m_Store = store;
-            m_Device = device;
         }
 
         BindableCollection<DataViewModel> m_Items;
@@ -127,17 +125,24 @@ namespace Refracto
 
         private void StartRunning()
         {
-            while (true)
+            using (var device = IoC.Get<IDevice>())
             {
-                var readout = m_Device.Read();
-                var item = RunningItem;
-                if (item == null)
+                while (true)
                 {
-                    break;
+                    var readout = device.Read();
+                    if (readout == null)
+                    {
+                        continue;
+                    }
+                    var item = RunningItem;
+                    if (item == null)
+                    {
+                        break;
+                    }
+                    item.Data.Add(readout);
+                    item.IsModified = true;
+                    NotifyOfPropertyChange(() => CanSaveItem);
                 }
-                item.Data.Add(readout);
-                item.IsModified = true;
-                NotifyOfPropertyChange(() => CanSaveItem);
             }
         }
 
