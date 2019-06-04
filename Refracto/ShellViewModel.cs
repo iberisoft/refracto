@@ -14,11 +14,11 @@ namespace Refracto
         readonly IStore m_Store;
         readonly IDevice m_Device;
 
-        public ShellViewModel(IWindowManager windowManager, IDialogManager dialogManager, IDevice device)
+        public ShellViewModel(IWindowManager windowManager, IDialogManager dialogManager, IStore store, IDevice device)
         {
             m_WindowManager = windowManager;
             m_DialogManager = dialogManager;
-            m_Store = IoC.Get<IStore>();
+            m_Store = store;
             m_Device = device;
         }
 
