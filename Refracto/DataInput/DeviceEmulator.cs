@@ -8,6 +8,10 @@ namespace Refracto.DataInput
     {
         int m_Index;
 
+        public void Dispose()
+        {
+        }
+
         public Readout Read()
         {
             Task.Delay(1000).Wait();

@@ -1,8 +1,9 @@
-﻿using Refracto.Data;
+﻿using System;
+using Refracto.Data;
 
 namespace Refracto.DataInput
 {
-    public interface IDevice
+    public interface IDevice : IDisposable
     {
         Readout Read();
     }
