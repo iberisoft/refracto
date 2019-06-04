@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Ookii.Dialogs.Wpf;
 using Refracto.Data;
 
@@ -34,6 +35,11 @@ namespace Refracto
         public void WarnExist(Timeline timeline)
         {
             MessageBox.Show(string.Format("'{0}' already exists.", timeline.Id), MessageBoxTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        public void Error(Exception ex)
+        {
+            MessageBox.Show(ex.Message, MessageBoxTitle, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         public string BrowseFolder()

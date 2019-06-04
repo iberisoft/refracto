@@ -1,4 +1,5 @@
-﻿using Refracto.Data;
+﻿using System;
+using Refracto.Data;
 
 namespace Refracto
 {
@@ -9,6 +10,8 @@ namespace Refracto
         bool ConfirmDelete(Timeline timeline);
 
         void WarnExist(Timeline timeline);
+
+        void Error(Exception ex);
 
         string BrowseFolder();
     }
