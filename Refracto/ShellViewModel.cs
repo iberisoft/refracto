@@ -109,6 +109,7 @@ namespace Refracto
             if (m_WindowManager.ShowDialog(createTimeline) == true)
             {
                 var item = new DataViewModel(createTimeline.Name);
+                item.IsModified = true;
                 if (m_Store.Create(item.Timeline))
                 {
                     Items.Add(item);
@@ -125,24 +126,32 @@ namespace Refracto
 
         private void StartRunning()
         {
-            using (var device = IoC.Get<IDevice>())
+            try
             {
-                while (true)
+                using (var device = IoC.Get<IDevice>())
                 {
-                    var readout = device.Read();
-                    if (readout == null)
+                    while (true)
                     {
-                        continue;
+                        var readout = device.Read();
+                        if (readout == null)
+                        {
+                            continue;
+                        }
+                        var item = RunningItem;
+                        if (item == null)
+                        {
+                            break;
+                        }
+                        item.Data.Add(readout);
+                        item.IsModified = true;
+                        NotifyOfPropertyChange(() => CanSaveItem);
                     }
-                    var item = RunningItem;
-                    if (item == null)
-                    {
-                        break;
-                    }
-                    item.Data.Add(readout);
-                    item.IsModified = true;
-                    NotifyOfPropertyChange(() => CanSaveItem);
                 }
+            }
+            catch (Exception ex)
+            {
+                RunningItem = null;
+                Execute.OnUIThread(() => m_DialogManager.Error(ex.InnerException ?? ex));
             }
         }
 
