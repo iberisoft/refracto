@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="ChartViewModel.cs" />
     <Compile Include="ConfigViewModel.cs" />
+    <Compile Include="DataInput\RsiDevice.cs" />
     <Compile Include="DataInput\DeviceEmulator.cs" />
     <Compile Include="DataInput\IDevice.cs" />
     <Compile Include="Data\IStore.cs" />
