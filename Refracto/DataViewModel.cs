@@ -28,7 +28,7 @@ namespace Refracto
             get => Timeline.Id;
         }
 
-        public DateTime? Timestamp => Timeline.Timestamp;
+        public DateTime Timestamp => Timeline.Timestamp;
 
         BindableCollection<Readout> m_Data;
 

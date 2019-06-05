@@ -13,7 +13,7 @@ namespace Refracto.Data
 
         public string Id { get; }
 
-        public DateTime? Timestamp => Data.FirstOrDefault()?.Timestamp;
+        public DateTime Timestamp => Data.FirstOrDefault()?.Timestamp ?? DateTime.Now;
 
         public List<Readout> Data { get; } = new List<Readout>();
     }
