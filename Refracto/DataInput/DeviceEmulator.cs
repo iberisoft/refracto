@@ -14,7 +14,7 @@ namespace Refracto.DataInput
 
         public Readout Read()
         {
-            Task.Delay(1000).Wait();
+            Task.Delay(2000).Wait();
 
             var readout = new Readout(DateTime.Now);
             readout.Brix = (float)Math.Sin(m_Index * Math.PI / 18) + 3;
