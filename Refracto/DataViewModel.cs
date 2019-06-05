@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using Caliburn.Micro;
 using Refracto.Data;
@@ -45,6 +46,8 @@ namespace Refracto
             }
         }
 
+        Queue<Readout> m_ChartReadouts = new Queue<Readout>();
+
         private void Data_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
@@ -55,7 +58,16 @@ namespace Refracto
                 {
                     NotifyOfPropertyChange(() => Timestamp);
                 }
-                Chart.AddReadout(readout);
+
+                m_ChartReadouts.Enqueue(readout);
+                if (Timeline.Data.Count % Properties.Settings.Default.ChartUpdateRate == 0)
+                {
+                    foreach (var readout2 in m_ChartReadouts)
+                    {
+                        Chart.AddReadout(readout2);
+                    }
+                    m_ChartReadouts.Clear();
+                }
             }
         }
 

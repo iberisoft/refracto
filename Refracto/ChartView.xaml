@@ -2,9 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:lc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf">
-    <lc:CartesianChart>
+    <lc:CartesianChart DisableAnimations="True" Pan="X">
         <lc:CartesianChart.AxisX>
-            <lc:Axis Labels="{Binding Path=TimestampLabels}" />
+            <lc:Axis Labels="{Binding Path=TimestampLabels}" MinValue="{Binding Path=TimestampMin, Mode=TwoWay}" MaxValue="{Binding Path=TimestampMax, Mode=TwoWay}" />
         </lc:CartesianChart.AxisX>
         <lc:CartesianChart.AxisY>
             <lc:Axis Title="&#xb0;Bx" Foreground="Green" />

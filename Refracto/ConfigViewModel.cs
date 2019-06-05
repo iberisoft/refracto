@@ -50,6 +50,20 @@ namespace Refracto
             }
         }
 
+        int m_XAxisLength;
+
+        public int XAxisLength
+        {
+            get => m_XAxisLength;
+            set
+            {
+                if (Set(ref m_XAxisLength, value))
+                {
+                    NotifyOfPropertyChange();
+                }
+            }
+        }
+
         public void Accept()
         {
             TryClose(true);

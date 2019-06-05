@@ -23,6 +23,34 @@ namespace Refracto
             }
         }
 
+        public int m_TimestampMin;
+
+        public int TimestampMin
+        {
+            get => m_TimestampMin;
+            set
+            {
+                if (Set(ref m_TimestampMin, value))
+                {
+                    NotifyOfPropertyChange();
+                }
+            }
+        }
+
+        public int m_TimestampMax = Properties.Settings.Default.XAxisLength;
+
+        public int TimestampMax
+        {
+            get => m_TimestampMax;
+            set
+            {
+                if (Set(ref m_TimestampMax, value))
+                {
+                    NotifyOfPropertyChange();
+                }
+            }
+        }
+
         ChartValues<float> m_BrixValues;
 
         public ChartValues<float> BrixValues
@@ -56,6 +84,12 @@ namespace Refracto
             NotifyOfPropertyChange(() => TimestampLabels);
             BrixValues.Add(readout.Brix);
             TemperatureValues.Add(readout.Temperature);
+
+            if (Data.Count > Properties.Settings.Default.XAxisLength)
+            {
+                TimestampMax = Data.Count - 1;
+                TimestampMin = TimestampMax - Properties.Settings.Default.XAxisLength;
+            }
         }
     }
 }

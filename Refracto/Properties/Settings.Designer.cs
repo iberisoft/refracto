@@ -46,5 +46,26 @@ namespace Refracto.Properties {
                 this["SerialPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int XAxisLength {
+            get {
+                return ((int)(this["XAxisLength"]));
+            }
+            set {
+                this["XAxisLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int ChartUpdateRate {
+            get {
+                return ((int)(this["ChartUpdateRate"]));
+            }
+        }
     }
 }
