@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using System.IO;
+using System.Linq;
 
 namespace Refracto
 {
@@ -19,7 +21,7 @@ namespace Refracto
             }
         }
 
-        public bool CanAccept => Name != "";
+        public bool CanAccept => Name != "" && Path.GetInvalidFileNameChars().All(ch => !Name.Contains(ch));
 
         public void Accept()
         {
