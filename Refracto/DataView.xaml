@@ -1,8 +1,9 @@
 ﻿<UserControl x:Class="Refracto.DataView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Refracto">
     <DockPanel>
-        <ListView Name="Data" DockPanel.Dock="Left" SelectionMode="Single">
+        <local:ListViewEx x:Name="Data" DockPanel.Dock="Left" SelectionMode="Single">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Time" DisplayMemberBinding="{Binding Path=Timestamp, StringFormat={}{0:T}}" />
@@ -10,7 +11,7 @@
                     <GridViewColumn Header="&#xb0;C" DisplayMemberBinding="{Binding Path=Temperature}" />
                 </GridView>
             </ListView.View>
-        </ListView>
+        </local:ListViewEx>
         <ContentControl Name="Chart" />
     </DockPanel>
 </UserControl>

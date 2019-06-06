@@ -107,6 +107,7 @@
     <Compile Include="IShell.cs" />
     <Compile Include="DialogManager.cs" />
     <Compile Include="CreateTimelineViewModel.cs" />
+    <Compile Include="ListViewEx.cs" />
     <Compile Include="ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
