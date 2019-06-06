@@ -29,11 +29,6 @@ namespace Refracto
                 if (m_Items == null)
                 {
                     m_Items = new BindableCollection<DataViewModel>(m_Store.ReadAll().Select(timeline => new DataViewModel(timeline)));
-                    foreach (var item in m_Items)
-                    {
-                        // TODO: Reading data on demand
-                        m_Store.ReadData(item.Timeline);
-                    }
                 }
                 return m_Items;
             }
@@ -46,6 +41,11 @@ namespace Refracto
             get => m_SelectedItem;
             set
             {
+                if (value != null && value.Timeline.Data.Count == 0)
+                {
+                    m_Store.ReadData(value.Timeline);
+                }
+
                 if (Set(ref m_SelectedItem, value))
                 {
                     NotifyOfPropertyChange();

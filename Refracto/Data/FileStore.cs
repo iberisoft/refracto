@@ -31,7 +31,7 @@ namespace Refracto.Data
 
         public IEnumerable<Timeline> ReadAll()
         {
-            return Directory.EnumerateFiles(BasePath, "*.csv").Select(filePath => new Timeline(Path.GetFileNameWithoutExtension(filePath)));
+            return Directory.EnumerateFiles(BasePath, "*.csv").Select(filePath => new Timeline(Path.GetFileNameWithoutExtension(filePath), File.GetCreationTime(filePath)));
         }
 
         public void ReadData(Timeline timeline)
@@ -53,6 +53,7 @@ namespace Refracto.Data
                 throw new ArgumentException("File not found", nameof(timeline));
             }
             File.WriteAllLines(filePath, ReadoutSerializer.Serialize(timeline.Data));
+            File.SetCreationTime(filePath, timeline.Timestamp);
         }
 
         public void Delete(string id)

@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Refracto.Data
 {
     public class Timeline
     {
-        public Timeline(string id)
+        public Timeline(string id, DateTime timestamp)
         {
             Id = id;
+            Timestamp = timestamp;
         }
 
         public string Id { get; }
 
-        public DateTime Timestamp => Data.FirstOrDefault()?.Timestamp ?? DateTime.Now;
+        public DateTime Timestamp { get; }
 
         public List<Readout> Data { get; } = new List<Readout>();
     }

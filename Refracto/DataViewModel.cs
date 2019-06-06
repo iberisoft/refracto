@@ -10,19 +10,29 @@ namespace Refracto
     {
         public DataViewModel(string id)
         {
-            Timeline = new Timeline(id);
-            Chart = new ChartViewModel(Timeline.Data);
+            Timeline = new Timeline(id, DateTime.Now);
         }
 
         public DataViewModel(Timeline timeline)
         {
             Timeline = timeline;
-            Chart = new ChartViewModel(Timeline.Data);
         }
 
         public Timeline Timeline { get; }
 
-        public ChartViewModel Chart { get; }
+        ChartViewModel m_Chart;
+
+        public ChartViewModel Chart
+        {
+            get
+            {
+                if (m_Chart == null)
+                {
+                    m_Chart = new ChartViewModel(Timeline.Data);
+                }
+                return m_Chart;
+            }
+        }
 
         public string Id
         {
