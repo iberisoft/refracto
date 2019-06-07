@@ -76,6 +76,12 @@ namespace Refracto
 
         public override void CanClose(Action<bool> callback)
         {
+            foreach (var item in m_Items.Where(item => item.IsModified && item.Timeline.Data.Count == 0).ToArray())
+            {
+                m_Store.Delete(item.Id);
+                m_Items.Remove(item);
+            }
+
             var close = true;
             if (m_Items.Any(item => item.IsModified))
             {
@@ -128,7 +134,7 @@ namespace Refracto
         {
             try
             {
-                using (var device = IoC.Get<IDevice>())
+                using (var device = IoC.Get<IDevice>(Properties.Settings.Default.SerialPort != "" ? "": "emulator"))
                 {
                     while (true)
                     {

@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Caliburn.Micro;
 
 namespace Refracto
 {
@@ -34,7 +36,15 @@ namespace Refracto
             }
         }
 
-        public string[] AllSerialPorts => System.IO.Ports.SerialPort.GetPortNames();
+        public string[] AllSerialPorts
+        {
+            get
+            {
+                var ports = new List<string>(System.IO.Ports.SerialPort.GetPortNames().Distinct());
+                ports.Insert(0, "");
+                return ports.ToArray();
+            }
+        }
 
         string m_SerialPort = "";
 
