@@ -17,6 +17,11 @@ namespace Refracto
                 }
             }
 
+            if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                ScrollIntoView(e.NewItems[0]);
+            }
+
             base.OnItemsChanged(e);
         }
     }
