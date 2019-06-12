@@ -114,7 +114,7 @@ namespace Refracto
             var createTimeline = new CreateTimelineViewModel();
             if (m_WindowManager.ShowDialog(createTimeline) == true)
             {
-                var item = new DataViewModel(createTimeline.Name);
+                var item = new DataViewModel(createTimeline.TimelineName);
                 item.IsModified = true;
                 if (m_Store.Create(item.Timeline))
                 {

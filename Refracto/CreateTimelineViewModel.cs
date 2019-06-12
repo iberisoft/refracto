@@ -6,14 +6,14 @@ namespace Refracto
 {
     public class CreateTimelineViewModel : Screen
     {
-        string m_Name = "";
+        string m_TimelineName = "";
 
-        public string Name
+        public string TimelineName
         {
-            get => m_Name;
+            get => m_TimelineName;
             set
             {
-                if (Set(ref m_Name, value))
+                if (Set(ref m_TimelineName, value))
                 {
                     NotifyOfPropertyChange();
                     NotifyOfPropertyChange(() => CanAccept);
@@ -21,7 +21,7 @@ namespace Refracto
             }
         }
 
-        public bool CanAccept => Name != "" && Path.GetInvalidFileNameChars().All(ch => !Name.Contains(ch));
+        public bool CanAccept => TimelineName != "" && Path.GetInvalidFileNameChars().All(ch => !TimelineName.Contains(ch));
 
         public void Accept()
         {

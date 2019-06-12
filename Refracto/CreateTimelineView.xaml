@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Style="{StaticResource WindowStyle}" Title="New" SizeToContent="Height" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False"
-        FocusManager.FocusedElement="{Binding ElementName=Name}">
+        FocusManager.FocusedElement="{Binding ElementName=TimelineName}">
     <DockPanel>
         <UniformGrid DockPanel.Dock="Bottom" Rows="1">
             <Button Name="Accept" IsDefault="True" Content="OK" />
@@ -17,7 +17,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Name:" />
-            <TextBox Name="Name" Grid.Row="0" Grid.Column="1" />
+            <TextBox Name="TimelineName" Grid.Row="0" Grid.Column="1" />
         </Grid>
     </DockPanel>
 </Window>
