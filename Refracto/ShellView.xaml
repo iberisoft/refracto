@@ -7,7 +7,7 @@
     <Window.Resources>
         <CollectionViewSource x:Key="Items" Source="{Binding Path=Items}">
             <CollectionViewSource.SortDescriptions>
-                <scm:SortDescription PropertyName="Timestamp" />
+                <scm:SortDescription PropertyName="Timestamp" Direction="Descending" />
                 <scm:SortDescription PropertyName="Id" />
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
