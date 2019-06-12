@@ -1,5 +1,4 @@
 ﻿using System;
-using Refracto.Data;
 
 namespace Refracto
 {
@@ -7,9 +6,9 @@ namespace Refracto
     {
         bool? ConfirmSave();
 
-        bool ConfirmDelete(Timeline timeline);
+        bool ConfirmDelete(object obj);
 
-        void WarnExist(Timeline timeline);
+        void WarnExist(object obj);
 
         void Error(Exception ex);
 

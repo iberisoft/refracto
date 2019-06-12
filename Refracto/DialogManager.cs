@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using Ookii.Dialogs.Wpf;
-using Refracto.Data;
 
 namespace Refracto
 {
@@ -27,14 +26,14 @@ namespace Refracto
             return ToBoolean(MessageBox.Show("Save new data?", MessageBoxTitle, MessageBoxButton.YesNoCancel, MessageBoxImage.Question));
         }
 
-        public bool ConfirmDelete(Timeline timeline)
+        public bool ConfirmDelete(object obj)
         {
-            return MessageBox.Show(string.Format("Delete '{0}'?", timeline.Id), MessageBoxTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes;
+            return MessageBox.Show(string.Format("Delete '{0}'?", obj), MessageBoxTitle, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes;
         }
 
-        public void WarnExist(Timeline timeline)
+        public void WarnExist(object obj)
         {
-            MessageBox.Show(string.Format("'{0}' already exists.", timeline.Id), MessageBoxTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show(string.Format("'{0}' already exists.", obj), MessageBoxTitle, MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         public void Error(Exception ex)
