@@ -15,6 +15,7 @@ namespace Refracto.DataInput
             m_Port = new SerialPort(Properties.Settings.Default.SerialPort);
             m_Port.BaudRate = 4800;
             m_Port.Open();
+            m_Port.Write("@2301\r");
         }
 
         public void Dispose()
@@ -24,10 +25,13 @@ namespace Refracto.DataInput
 
         public Readout Read()
         {
-            m_Port.Write("@1302\r");
             if (WaitResponse())
             {
                 var response = m_Port.ReadExisting();
+                if (response.StartsWith("OK"))
+                {
+                    return null;
+                }
                 return ParseResponse(response);
             }
             return null;
@@ -50,9 +54,9 @@ namespace Refracto.DataInput
             {
                 response = response.Substring(1);
                 var tokens = response.Split(new[] { ' ', (char)0 }, StringSplitOptions.RemoveEmptyEntries);
-                if (tokens.Length > 1)
+                if (tokens.Length > 2)
                 {
-                    if (float.TryParse(tokens[0], out float temperature) && float.TryParse(tokens[1], out float brix))
+                    if (float.TryParse(tokens[1], out float temperature) && float.TryParse(tokens[2], out float brix))
                     {
                         return new Readout(DateTime.Now) { Brix = brix, Temperature = temperature };
                     }
