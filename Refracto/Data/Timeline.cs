@@ -16,5 +16,10 @@ namespace Refracto.Data
         public DateTime Timestamp { get; }
 
         public List<Readout> Data { get; } = new List<Readout>();
+
+        public override string ToString()
+        {
+            return Id;
+        }
     }
 }
