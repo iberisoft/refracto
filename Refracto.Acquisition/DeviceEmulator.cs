@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Refracto.Data;
+using Refracto.Services;
 
-namespace Refracto.DataInput
+namespace Refracto.Acquisition
 {
     class DeviceEmulator : IDevice
     {

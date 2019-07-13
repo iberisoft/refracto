@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Refracto.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,11 +8,18 @@ namespace Refracto.Data
 {
     class FileStore : IStore
     {
+        readonly ISettings m_Settings;
+
+        public FileStore(ISettings settings)
+        {
+            m_Settings = settings;
+        }
+
         public string BasePath
         {
             get
             {
-                var path = Properties.Settings.Default.FileStorePath;
+                var path = m_Settings.FileStorePath;
                 return Directory.Exists(path) ? path : AppDomain.CurrentDomain.BaseDirectory;
             }
         }

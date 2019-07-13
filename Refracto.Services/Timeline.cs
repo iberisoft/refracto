@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Refracto.Data
+namespace Refracto.Services
 {
     public class Timeline
     {

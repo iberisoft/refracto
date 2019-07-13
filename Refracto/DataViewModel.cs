@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using Caliburn.Micro;
-using Refracto.Data;
+using Refracto.Services;
 
 namespace Refracto
 {

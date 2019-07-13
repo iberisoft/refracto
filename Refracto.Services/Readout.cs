@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Refracto.Data
+namespace Refracto.Services
 {
     public class Readout
     {

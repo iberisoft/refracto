@@ -38,8 +38,14 @@
     <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.2.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Autofac, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.AutofacBootstrap.3.0.1.17\lib\net40\Caliburn.Micro.Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
@@ -91,29 +97,23 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
+    <Compile Include="AssemblyModule.cs" />
     <Compile Include="ChartView.xaml.cs">
       <DependentUpon>ChartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChartViewModel.cs" />
     <Compile Include="ConfigViewModel.cs" />
-    <Compile Include="DataInput\RsiDevice.cs" />
-    <Compile Include="DataInput\DeviceEmulator.cs" />
-    <Compile Include="DataInput\IDevice.cs" />
-    <Compile Include="Data\IStore.cs" />
-    <Compile Include="Data\FileStore.cs" />
     <Compile Include="IDialogManager.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="DialogManager.cs" />
     <Compile Include="CreateTimelineViewModel.cs" />
     <Compile Include="ListViewEx.cs" />
+    <Compile Include="Properties\Settings.cs" />
     <Compile Include="ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data\Readout.cs" />
-    <Compile Include="Data\ReadoutSerializer.cs" />
-    <Compile Include="Data\Timeline.cs" />
     <Compile Include="DataViewModel.cs" />
     <Page Include="ChartView.xaml">
       <SubType>Designer</SubType>
@@ -159,5 +159,20 @@
   <ItemGroup>
     <Resource Include="App.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Refracto.Acquisition\Refracto.Acquisition.csproj">
+      <Project>{73cfa191-4e7f-426e-b285-87067e9d2696}</Project>
+      <Name>Refracto.Acquisition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Refracto.Data\Refracto.Data.csproj">
+      <Project>{ea0c7048-82ae-4c20-b384-5ad03709fdaa}</Project>
+      <Name>Refracto.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Refracto.Services\Refracto.Services.csproj">
+      <Project>{9b7a48e2-62e5-4c03-bc5b-eadea60d6c4b}</Project>
+      <Name>Refracto.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

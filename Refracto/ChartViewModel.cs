@@ -2,7 +2,7 @@
 using System.Linq;
 using Caliburn.Micro;
 using LiveCharts;
-using Refracto.Data;
+using Refracto.Services;
 
 namespace Refracto
 {

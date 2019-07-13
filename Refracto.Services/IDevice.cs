@@ -1,7 +1,6 @@
 ﻿using System;
-using Refracto.Data;
 
-namespace Refracto.DataInput
+namespace Refracto.Services
 {
     public interface IDevice : IDisposable
     {

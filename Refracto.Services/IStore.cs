@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Refracto.Data
+namespace Refracto.Services
 {
     public interface IStore
     {

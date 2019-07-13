@@ -1,18 +1,18 @@
 ﻿using System;
 using System.IO.Ports;
 using System.Threading.Tasks;
-using Refracto.Data;
+using Refracto.Services;
 
-namespace Refracto.DataInput
+namespace Refracto.Acquisition
 {
     class RsiDevice : IDevice
     {
-        SerialPort m_Port;
+        readonly SerialPort m_Port;
         const int m_Timeout = 10000;
 
-        public RsiDevice()
+        public RsiDevice(ISettings settings)
         {
-            m_Port = new SerialPort(Properties.Settings.Default.SerialPort);
+            m_Port = new SerialPort(settings.SerialPort);
             m_Port.BaudRate = 4800;
             m_Port.Open();
             m_Port.Write("@2301\r");

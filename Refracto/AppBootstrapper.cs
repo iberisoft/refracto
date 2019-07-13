@@ -1,47 +1,28 @@
-using System;
-using System.Collections.Generic;
+using Autofac;
+using Caliburn.Micro.Autofac;
 using System.Windows;
-using Caliburn.Micro;
-using Refracto.Data;
-using Refracto.DataInput;
 
 namespace Refracto
 {
-    public class AppBootstrapper : BootstrapperBase
+    public class AppBootstrapper : AutofacBootstrapper<ShellViewModel>
     {
-        SimpleContainer container;
-
         public AppBootstrapper()
         {
             Initialize();
         }
 
-        protected override void Configure()
+        protected override void ConfigureBootstrapper()
         {
-            container = new SimpleContainer();
+            base.ConfigureBootstrapper();
 
-            container.Singleton<IWindowManager, WindowManager>();
-            container.Singleton<IDialogManager, DialogManager>();
-            container.Singleton<IEventAggregator, EventAggregator>();
-            container.PerRequest<IShell, ShellViewModel>();
-            container.Singleton<IStore, FileStore>();
-            container.PerRequest<IDevice, DeviceEmulator>("emulator");
-            container.PerRequest<IDevice, RsiDevice>("");
+            EnforceNamespaceConvention = false;
         }
 
-        protected override object GetInstance(Type service, string key)
+        protected override void ConfigureContainer(ContainerBuilder builder)
         {
-            return container.GetInstance(service, key);
-        }
-
-        protected override IEnumerable<object> GetAllInstances(Type service)
-        {
-            return container.GetAllInstances(service);
-        }
-
-        protected override void BuildUp(object instance)
-        {
-            container.BuildUp(instance);
+            builder.RegisterModule<AssemblyModule>();
+            builder.RegisterModule<Data.AssemblyModule>();
+            builder.RegisterModule<Acquisition.AssemblyModule>();
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)

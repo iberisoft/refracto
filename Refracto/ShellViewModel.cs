@@ -2,8 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Caliburn.Micro;
-using Refracto.Data;
-using Refracto.DataInput;
+using Refracto.Services;
 
 namespace Refracto
 {
@@ -134,7 +133,7 @@ namespace Refracto
         {
             try
             {
-                using (var device = IoC.Get<IDevice>(Properties.Settings.Default.SerialPort != "" ? "": "emulator"))
+                using (var device = IoC.Get<IDevice>())
                 {
                     while (true)
                     {
