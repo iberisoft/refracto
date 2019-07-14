@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Refracto.Services;
+using System;
 using System.IO.Ports;
 using System.Threading.Tasks;
-using Refracto.Services;
 
 namespace Refracto.Acquisition
 {

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Caliburn.Micro;
+﻿using Caliburn.Micro;
 using LiveCharts;
 using Refracto.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Refracto
 {

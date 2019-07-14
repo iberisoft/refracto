@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using Refracto.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using Caliburn.Micro;
-using Refracto.Services;
 
 namespace Refracto
 {

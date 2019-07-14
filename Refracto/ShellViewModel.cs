@@ -1,8 +1,8 @@
+using Caliburn.Micro;
+using Refracto.Services;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Caliburn.Micro;
-using Refracto.Services;
 
 namespace Refracto
 {

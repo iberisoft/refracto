@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Refracto.Services;
+using System;
 using System.Threading.Tasks;
-using Refracto.Services;
 
 namespace Refracto.Acquisition
 {

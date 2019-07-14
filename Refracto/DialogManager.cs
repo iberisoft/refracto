@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Ookii.Dialogs.Wpf;
+using System;
 using System.Windows;
-using Ookii.Dialogs.Wpf;
 
 namespace Refracto
 {
