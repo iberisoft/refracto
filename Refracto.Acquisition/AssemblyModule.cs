@@ -18,7 +18,7 @@ namespace Refracto.Acquisition
                 {
                     return new DeviceEmulator();
                 }
-            }).As<IDevice>();
+            }).As<IDevice>().ExternallyOwned();
         }
     }
 }
