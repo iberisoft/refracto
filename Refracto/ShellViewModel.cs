@@ -27,7 +27,12 @@ namespace Refracto
             {
                 if (m_Items == null)
                 {
-                    m_Items = new BindableCollection<DataViewModel>(m_Store.ReadAll().Select(timeline => new DataViewModel(timeline)));
+                    m_Items = new BindableCollection<DataViewModel>(m_Store.ReadAll().Select(timeline =>
+                    {
+                        var item = IoC.Get<DataViewModel>();
+                        item.Initialize(timeline);
+                        return item;
+                    }));
                 }
                 return m_Items;
             }
@@ -110,10 +115,11 @@ namespace Refracto
 
         public void CreateItem()
         {
-            var createTimeline = new CreateTimelineViewModel();
+            var createTimeline = IoC.Get<CreateTimelineViewModel>();
             if (m_WindowManager.ShowDialog(createTimeline) == true)
             {
-                var item = new DataViewModel(createTimeline.TimelineName);
+                var item = IoC.Get<DataViewModel>();
+                item.Initialize(createTimeline.TimelineName);
                 item.IsModified = true;
                 if (m_Store.Create(item.Timeline))
                 {
@@ -191,7 +197,7 @@ namespace Refracto
 
         public void Config()
         {
-            var config = new ConfigViewModel(m_DialogManager);
+            var config = IoC.Get<ConfigViewModel>();
             config.StorePath = Properties.Settings.Default.FileStorePath;
             config.SerialPort = Properties.Settings.Default.SerialPort;
             config.XAxisLength = Properties.Settings.Default.XAxisLength;

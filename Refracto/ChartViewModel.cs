@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Caliburn.Micro;
 using LiveCharts;
@@ -8,12 +9,16 @@ namespace Refracto
 {
     public class ChartViewModel : PropertyChangedBase
     {
-        public ChartViewModel(List<Readout> data)
+        public void Initialize(List<Readout> data)
         {
+            if (Data != null)
+            {
+                throw new InvalidOperationException("Already initialized");
+            }
             Data = data;
         }
 
-        public List<Readout> Data { get; }
+        public List<Readout> Data { get; private set; }
 
         public List<string> TimestampLabels
         {
