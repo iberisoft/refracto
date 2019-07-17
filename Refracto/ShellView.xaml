@@ -45,12 +45,6 @@
                         </GridViewColumn>
                     </GridView>
                 </ListView.View>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
             </local:ListViewEx>
         </DockPanel>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
