@@ -20,6 +20,7 @@ namespace Refracto
             get => m_StorePath;
             set
             {
+                value = value.Trim();
                 if (Set(ref m_StorePath, value))
                 {
                     NotifyOfPropertyChange();

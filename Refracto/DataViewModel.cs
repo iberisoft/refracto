@@ -106,8 +106,7 @@ namespace Refracto
 
         public override bool Equals(object obj)
         {
-            var op2 = obj as DataViewModel;
-            return op2 != null && op2.Id == Id;
+            return obj is DataViewModel op2 && op2.Id == Id;
         }
 
         public override int GetHashCode()
