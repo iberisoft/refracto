@@ -35,10 +35,7 @@ namespace Refracto
             get => m_TimestampMin;
             set
             {
-                if (Set(ref m_TimestampMin, value))
-                {
-                    NotifyOfPropertyChange();
-                }
+                Set(ref m_TimestampMin, value);
             }
         }
 
@@ -49,10 +46,7 @@ namespace Refracto
             get => m_TimestampMax;
             set
             {
-                if (Set(ref m_TimestampMax, value))
-                {
-                    NotifyOfPropertyChange();
-                }
+                Set(ref m_TimestampMax, value);
             }
         }
 

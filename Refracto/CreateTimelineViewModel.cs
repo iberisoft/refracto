@@ -15,7 +15,6 @@ namespace Refracto
             {
                 if (Set(ref m_TimelineName, value))
                 {
-                    NotifyOfPropertyChange();
                     NotifyOfPropertyChange(() => CanAccept);
                 }
             }

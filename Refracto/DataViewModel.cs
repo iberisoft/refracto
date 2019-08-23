@@ -97,10 +97,7 @@ namespace Refracto
             get => m_IsModified;
             set
             {
-                if (Set(ref m_IsModified, value))
-                {
-                    NotifyOfPropertyChange();
-                }
+                Set(ref m_IsModified, value);
             }
         }
 

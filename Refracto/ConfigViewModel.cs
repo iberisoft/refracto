@@ -21,10 +21,7 @@ namespace Refracto
             set
             {
                 value = value.Trim();
-                if (Set(ref m_StorePath, value))
-                {
-                    NotifyOfPropertyChange();
-                }
+                Set(ref m_StorePath, value);
             }
         }
 
@@ -54,10 +51,7 @@ namespace Refracto
             get => m_SerialPort;
             set
             {
-                if (Set(ref m_SerialPort, value))
-                {
-                    NotifyOfPropertyChange();
-                }
+                Set(ref m_SerialPort, value);
             }
         }
 
@@ -68,10 +62,7 @@ namespace Refracto
             get => m_XAxisLength;
             set
             {
-                if (Set(ref m_XAxisLength, value))
-                {
-                    NotifyOfPropertyChange();
-                }
+                Set(ref m_XAxisLength, value);
             }
         }
 

@@ -52,7 +52,6 @@ namespace Refracto
 
                 if (Set(ref m_SelectedItem, value))
                 {
-                    NotifyOfPropertyChange();
                     NotifyOfPropertyChange(() => CanSaveItem);
                     NotifyOfPropertyChange(() => CanDeleteItem);
                 }
@@ -68,7 +67,6 @@ namespace Refracto
             {
                 if (Set(ref m_RunningItem, value))
                 {
-                    NotifyOfPropertyChange();
                     NotifyOfPropertyChange(() => CanCreateItem);
                     NotifyOfPropertyChange(() => CanStopRunning);
                     NotifyOfPropertyChange(() => CanSaveItem);
