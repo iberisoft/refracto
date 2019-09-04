@@ -1,5 +1,6 @@
 using Autofac;
 using Caliburn.Micro.Autofac;
+using Refracto.Services;
 using System.Windows;
 
 namespace Refracto

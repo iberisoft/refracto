@@ -99,12 +99,8 @@
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="AssemblyModule.cs" />
-    <Compile Include="ChartView.xaml.cs">
-      <DependentUpon>ChartView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ChartViewModel.cs" />
     <Compile Include="ConfigViewModel.cs" />
-    <Compile Include="IShell.cs" />
     <Compile Include="DialogManager.cs" />
     <Compile Include="CreateTimelineViewModel.cs" />
     <Compile Include="ListViewEx.cs" />

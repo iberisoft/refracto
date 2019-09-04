@@ -8,9 +8,7 @@ namespace Refracto.Acquisition
     {
         int m_Index;
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() { }
 
         public Readout Read()
         {
