@@ -104,7 +104,6 @@
     </Compile>
     <Compile Include="ChartViewModel.cs" />
     <Compile Include="ConfigViewModel.cs" />
-    <Compile Include="IDialogManager.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="DialogManager.cs" />
     <Compile Include="CreateTimelineViewModel.cs" />
