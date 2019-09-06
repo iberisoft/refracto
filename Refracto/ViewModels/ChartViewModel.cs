@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Refracto.ViewModels
 {
-    public class ChartViewModel : PropertyChangedBase
+    class ChartViewModel : PropertyChangedBase
     {
         public void Initialize(List<Readout> data)
         {

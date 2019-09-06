@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace Refracto
 {
-    public class AppBootstrapper : AutofacBootstrapper<ShellViewModel>
+    class AppBootstrapper : AutofacBootstrapper<ShellViewModel>
     {
         public AppBootstrapper()
         {

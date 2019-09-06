@@ -6,7 +6,7 @@ using System.Collections.Specialized;
 
 namespace Refracto.ViewModels
 {
-    public class DataViewModel : PropertyChangedBase
+    class DataViewModel : PropertyChangedBase
     {
         public void Initialize(string id)
         {

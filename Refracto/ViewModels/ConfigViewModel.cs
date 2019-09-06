@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Refracto.ViewModels
 {
-    public class ConfigViewModel : Screen
+    class ConfigViewModel : Screen
     {
         readonly IDialogManager m_DialogManager;
 

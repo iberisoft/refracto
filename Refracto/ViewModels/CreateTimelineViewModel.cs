@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Refracto.ViewModels
 {
-    public class CreateTimelineViewModel : Screen
+    class CreateTimelineViewModel : Screen
     {
         string m_TimelineName = "";
 

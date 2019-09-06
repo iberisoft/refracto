@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Refracto.ViewModels
 {
-    public class ShellViewModel : Screen, IShell
+    class ShellViewModel : Screen, IShell
     {
         readonly IWindowManager m_WindowManager;
         readonly IDialogManager m_DialogManager;
