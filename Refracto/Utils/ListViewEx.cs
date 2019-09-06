@@ -1,7 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Windows.Controls;
 
-namespace Refracto
+namespace Refracto.Utils
 {
     public class ListViewEx : ListView
     {

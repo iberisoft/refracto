@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Refracto.Services;
+using Refracto.ViewModels;
 
 namespace Refracto
 {

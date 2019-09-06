@@ -99,35 +99,35 @@
     </ApplicationDefinition>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="AssemblyModule.cs" />
-    <Compile Include="ChartViewModel.cs" />
-    <Compile Include="ConfigViewModel.cs" />
+    <Compile Include="ViewModels\ChartViewModel.cs" />
+    <Compile Include="ViewModels\ConfigViewModel.cs" />
     <Compile Include="DialogManager.cs" />
-    <Compile Include="CreateTimelineViewModel.cs" />
-    <Compile Include="ListViewEx.cs" />
+    <Compile Include="ViewModels\CreateTimelineViewModel.cs" />
+    <Compile Include="Utils\ListViewEx.cs" />
     <Compile Include="Properties\Settings.cs" />
-    <Compile Include="ShellViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataViewModel.cs" />
-    <Page Include="ChartView.xaml">
+    <Compile Include="ViewModels\DataViewModel.cs" />
+    <Page Include="Views\ChartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ConfigView.xaml">
+    <Page Include="Views\ConfigView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CreateTimelineView.xaml">
+    <Page Include="Views\CreateTimelineView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ShellView.xaml">
+    <Page Include="Views\ShellView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="DataView.xaml">
+    <Page Include="Views\DataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

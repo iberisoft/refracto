@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 
-namespace Refracto
+namespace Refracto.ViewModels
 {
     public class DataViewModel : PropertyChangedBase
     {

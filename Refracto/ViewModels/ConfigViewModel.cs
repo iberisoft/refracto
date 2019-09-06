@@ -3,7 +3,7 @@ using Refracto.Services;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Refracto
+namespace Refracto.ViewModels
 {
     public class ConfigViewModel : Screen
     {

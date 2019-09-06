@@ -1,6 +1,7 @@
 using Autofac;
 using Caliburn.Micro.Autofac;
 using Refracto.Services;
+using Refracto.ViewModels;
 using System.Windows;
 
 namespace Refracto

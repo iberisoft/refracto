@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace Refracto
+namespace Refracto.ViewModels
 {
     public class CreateTimelineViewModel : Screen
     {

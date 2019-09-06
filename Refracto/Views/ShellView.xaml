@@ -1,8 +1,8 @@
-<Window x:Class="Refracto.ShellView"
+<Window x:Class="Refracto.Views.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-        xmlns:local="clr-namespace:Refracto"
+        xmlns:utils="clr-namespace:Refracto.Utils"
         Style="{StaticResource WindowStyle}" Title="Refracto">
     <Window.Resources>
         <CollectionViewSource x:Key="Items" Source="{Binding Path=Items}">
@@ -28,7 +28,7 @@
             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
                 <Button Name="Config" Content="Configuration" />
             </UniformGrid>
-            <local:ListViewEx SelectionMode="Single" ItemsSource="{Binding Source={StaticResource Items}}" SelectedItem="{Binding Path=SelectedItem}">
+            <utils:ListViewEx SelectionMode="Single" ItemsSource="{Binding Source={StaticResource Items}}" SelectedItem="{Binding Path=SelectedItem}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Path=Timestamp, StringFormat={}{0:d}}" />
@@ -45,7 +45,7 @@
                         </GridViewColumn>
                     </GridView>
                 </ListView.View>
-            </local:ListViewEx>
+            </utils:ListViewEx>
         </DockPanel>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
         <ContentControl Name="SelectedItem" Grid.Column="2" />
