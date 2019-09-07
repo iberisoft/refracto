@@ -8,25 +8,17 @@ namespace Refracto.ViewModels
 {
     class DataViewModel : PropertyChangedBase
     {
-        public void Initialize(string id)
-        {
-            if (Timeline != null)
-            {
-                throw new InvalidOperationException("Already initialized");
-            }
-            Timeline = new Timeline(id, DateTime.Now);
-        }
+        public delegate DataViewModel Factory(Timeline timeline);
 
-        public void Initialize(Timeline timeline)
+        readonly ChartViewModel.Factory m_ChartFactory;
+
+        public DataViewModel(ChartViewModel.Factory chartFactory, Timeline timeline)
         {
-            if (Timeline != null)
-            {
-                throw new InvalidOperationException("Already initialized");
-            }
+            m_ChartFactory = chartFactory;
             Timeline = timeline;
         }
 
-        public Timeline Timeline { get; private set; }
+        public Timeline Timeline { get; }
 
         ChartViewModel m_Chart;
 
@@ -36,8 +28,7 @@ namespace Refracto.ViewModels
             {
                 if (m_Chart == null)
                 {
-                    m_Chart = IoC.Get<ChartViewModel>();
-                    m_Chart.Initialize(Timeline.Data);
+                    m_Chart = m_ChartFactory(Timeline.Data);
                 }
                 return m_Chart;
             }

@@ -6,6 +6,8 @@ namespace Refracto.ViewModels
 {
     class CreateTimelineViewModel : Screen
     {
+        public delegate CreateTimelineViewModel Factory();
+
         string m_TimelineName = "";
 
         public string TimelineName
