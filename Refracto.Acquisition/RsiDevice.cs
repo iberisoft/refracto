@@ -1,7 +1,7 @@
 ﻿using Refracto.Services;
 using System;
 using System.IO.Ports;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Refracto.Acquisition
 {
@@ -43,7 +43,7 @@ namespace Refracto.Acquisition
             {
                 if (m_Port.BytesToRead > 0)
                     return true;
-                Task.Delay(10).Wait();
+                Thread.Sleep(10);
             }
             return false;
         }

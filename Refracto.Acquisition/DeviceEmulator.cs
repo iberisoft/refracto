@@ -1,6 +1,6 @@
 ﻿using Refracto.Services;
 using System;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Refracto.Acquisition
 {
@@ -12,7 +12,7 @@ namespace Refracto.Acquisition
 
         public Readout Read()
         {
-            Task.Delay(2000).Wait();
+            Thread.Sleep(2000);
 
             var readout = new Readout(DateTime.Now);
             readout.Brix = (float)Math.Sin(m_Index * Math.PI / 18) + 3;
