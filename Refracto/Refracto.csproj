@@ -106,10 +106,6 @@
     <Compile Include="Utils\ListViewEx.cs" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ViewModels\DataViewModel.cs" />
     <Page Include="Views\ChartView.xaml">
       <SubType>Designer</SubType>

@@ -17,15 +17,9 @@ namespace Refracto.ViewModels
 
         public List<Readout> Data { get; }
 
-        public List<string> TimestampLabels
-        {
-            get
-            {
-                return new List<string>(Data.Select(readout => readout.Timestamp.ToString("T")));
-            }
-        }
+        public List<string> TimestampLabels => new List<string>(Data.Select(readout => readout.Timestamp.ToString("T")));
 
-        public int m_TimestampMin;
+        int m_TimestampMin;
 
         public int TimestampMin
         {
@@ -36,7 +30,7 @@ namespace Refracto.ViewModels
             }
         }
 
-        public int m_TimestampMax = Properties.Settings.Default.XAxisLength;
+        int m_TimestampMax = Properties.Settings.Default.XAxisLength;
 
         public int TimestampMax
         {

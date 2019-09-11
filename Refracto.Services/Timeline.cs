@@ -17,9 +17,6 @@ namespace Refracto.Services
 
         public List<Readout> Data { get; } = new List<Readout>();
 
-        public override string ToString()
-        {
-            return Id;
-        }
+        public override string ToString() => Id;
     }
 }

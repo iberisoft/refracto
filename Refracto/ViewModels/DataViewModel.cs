@@ -34,10 +34,7 @@ namespace Refracto.ViewModels
             }
         }
 
-        public string Id
-        {
-            get => Timeline.Id;
-        }
+        public string Id => Timeline.Id;
 
         public DateTime Timestamp => Timeline.Timestamp;
 
@@ -92,14 +89,8 @@ namespace Refracto.ViewModels
             }
         }
 
-        public override bool Equals(object obj)
-        {
-            return obj is DataViewModel op2 && op2.Id == Id;
-        }
+        public override bool Equals(object obj) => obj is DataViewModel op2 && op2.Id == Id;
 
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        public override int GetHashCode() => Id.GetHashCode();
     }
 }
