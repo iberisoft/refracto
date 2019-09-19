@@ -23,7 +23,6 @@ namespace Refracto.ViewModels
             get => m_StorePath;
             set
             {
-                value = value.Trim();
                 Set(ref m_StorePath, value);
             }
         }
