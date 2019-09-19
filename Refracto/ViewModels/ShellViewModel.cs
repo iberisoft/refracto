@@ -202,7 +202,7 @@ namespace Refracto.ViewModels
             config.XAxisLength = Properties.Settings.Default.XAxisLength;
             if (m_WindowManager.ShowDialog(config) == true)
             {
-                Properties.Settings.Default.FileStorePath = config.StorePath.Trim();
+                Properties.Settings.Default.FileStorePath = config.StorePath;
                 Properties.Settings.Default.SerialPort = config.SerialPort;
                 Properties.Settings.Default.XAxisLength = config.XAxisLength;
                 Properties.Settings.Default.Save();
