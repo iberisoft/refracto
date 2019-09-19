@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Store Folder:" />
+            <Label Grid.Row="0" Grid.Column="0" Content="Storage Folder:" />
             <TextBox Name="StorePath" Grid.Row="0" Grid.Column="1" />
             <Button Name="BrowseStore" Grid.Row="0" Grid.Column="2" Style="{StaticResource BrowseButtonStyle}" />
             <Label Grid.Row="1" Grid.Column="0" Content="Serial Port:" />
