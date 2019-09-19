@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Storage Folder:" />
-            <TextBox Name="StorePath" Grid.Row="0" Grid.Column="1" />
+            <TextBox Name="StorePath" Grid.Row="0" Grid.Column="1" Text="{Binding StorePath}" />
             <Button Name="BrowseStore" Grid.Row="0" Grid.Column="2" Style="{StaticResource BrowseButtonStyle}" />
             <Label Grid.Row="1" Grid.Column="0" Content="Serial Port:" />
             <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Path=AllSerialPorts}" SelectedItem="{Binding Path=SerialPort}" />
