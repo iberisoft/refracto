@@ -12,10 +12,10 @@ namespace Refracto.ViewModels
 
         readonly ChartViewModel.Factory m_ChartFactory;
 
-        public DataViewModel(ChartViewModel.Factory chartFactory, Timeline timeline)
+        public DataViewModel(Timeline timeline, ChartViewModel.Factory chartFactory)
         {
-            m_ChartFactory = chartFactory;
             Timeline = timeline;
+            m_ChartFactory = chartFactory;
         }
 
         public Timeline Timeline { get; }
