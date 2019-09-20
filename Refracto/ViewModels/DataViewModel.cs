@@ -8,14 +8,9 @@ namespace Refracto.ViewModels
 {
     class DataViewModel : PropertyChangedBase
     {
-        public delegate DataViewModel Factory(Timeline timeline);
-
-        readonly ChartViewModel.Factory m_ChartFactory;
-
-        public DataViewModel(Timeline timeline, ChartViewModel.Factory chartFactory)
+        public DataViewModel(Timeline timeline)
         {
             Timeline = timeline;
-            m_ChartFactory = chartFactory;
         }
 
         public Timeline Timeline { get; }
@@ -28,7 +23,7 @@ namespace Refracto.ViewModels
             {
                 if (m_Chart == null)
                 {
-                    m_Chart = m_ChartFactory(Timeline.Data);
+                    m_Chart = ViewModelFactory.ChartViewModel(Timeline.Data);
                 }
                 return m_Chart;
             }

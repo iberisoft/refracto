@@ -8,8 +8,6 @@ namespace Refracto.ViewModels
 {
     class ChartViewModel : PropertyChangedBase
     {
-        public delegate ChartViewModel Factory(List<Readout> data);
-
         public ChartViewModel(List<Readout> data)
         {
             Data = data;

@@ -7,8 +7,6 @@ namespace Refracto.ViewModels
 {
     class ConfigViewModel : Screen
     {
-        public delegate ConfigViewModel Factory();
-
         readonly IDialogManager m_DialogManager;
 
         public ConfigViewModel(IDialogManager dialogManager)

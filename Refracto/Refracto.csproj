@@ -107,6 +107,7 @@
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\DataViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelFactory.cs" />
     <Page Include="Views\ChartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

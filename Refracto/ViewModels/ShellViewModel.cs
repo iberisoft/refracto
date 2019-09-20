@@ -11,19 +11,12 @@ namespace Refracto.ViewModels
         readonly IWindowManager m_WindowManager;
         readonly IDialogManager m_DialogManager;
         readonly IStore m_Store;
-        readonly DataViewModel.Factory m_DataFactory;
-        readonly CreateTimelineViewModel.Factory m_CreateTimelineFactory;
-        readonly ConfigViewModel.Factory m_ConfigFactory;
 
-        public ShellViewModel(IWindowManager windowManager, IDialogManager dialogManager, IStore store, DataViewModel.Factory dataFactory, CreateTimelineViewModel.Factory createTimelineFactory,
-            ConfigViewModel.Factory configFactory)
+        public ShellViewModel(IWindowManager windowManager, IDialogManager dialogManager, IStore store)
         {
             m_WindowManager = windowManager;
             m_DialogManager = dialogManager;
             m_Store = store;
-            m_DataFactory = dataFactory;
-            m_CreateTimelineFactory = createTimelineFactory;
-            m_ConfigFactory = configFactory;
         }
 
         BindableCollection<DataViewModel> m_Items;
@@ -34,7 +27,7 @@ namespace Refracto.ViewModels
             {
                 if (m_Items == null)
                 {
-                    m_Items = new BindableCollection<DataViewModel>(m_Store.ReadAll().Select(timeline => m_DataFactory(timeline)));
+                    m_Items = new BindableCollection<DataViewModel>(m_Store.ReadAll().Select(timeline => ViewModelFactory.DataViewModel(timeline)));
                 }
                 return m_Items;
             }
@@ -115,10 +108,10 @@ namespace Refracto.ViewModels
 
         public void CreateItem()
         {
-            var createTimeline = m_CreateTimelineFactory();
+            var createTimeline = ViewModelFactory.CreateTimelineViewModel();
             if (m_WindowManager.ShowDialog(createTimeline) == true)
             {
-                var item = m_DataFactory(new Timeline(createTimeline.TimelineName, DateTime.Now));
+                var item = ViewModelFactory.DataViewModel(new Timeline(createTimeline.TimelineName, DateTime.Now));
                 item.IsModified = true;
                 if (m_Store.Create(item.Timeline))
                 {
@@ -196,7 +189,7 @@ namespace Refracto.ViewModels
 
         public void Config()
         {
-            var config = m_ConfigFactory();
+            var config = ViewModelFactory.ConfigViewModel();
             config.StorePath = Properties.Settings.Default.FileStorePath;
             config.SerialPort = Properties.Settings.Default.SerialPort;
             config.XAxisLength = Properties.Settings.Default.XAxisLength;
