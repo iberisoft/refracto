@@ -42,9 +42,10 @@ namespace Refracto
             MessageBox.Show(ex.Message, MessageBoxTitle, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        public string BrowseFolder()
+        public string BrowseFolder(string path)
         {
             var dialog = new VistaFolderBrowserDialog();
+            dialog.SelectedPath = path;
             return dialog.ShowDialog() == true ? dialog.SelectedPath : null;
         }
     }

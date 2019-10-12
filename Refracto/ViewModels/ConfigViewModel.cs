@@ -28,7 +28,7 @@ namespace Refracto.ViewModels
 
         public void BrowseStore()
         {
-            var path = m_DialogManager.BrowseFolder();
+            var path = m_DialogManager.BrowseFolder(StorePath);
             if (path != null)
             {
                 StorePath = path;

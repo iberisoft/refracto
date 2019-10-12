@@ -12,6 +12,6 @@ namespace Refracto.Services
 
         void Error(Exception ex);
 
-        string BrowseFolder();
+        string BrowseFolder(string path);
     }
 }
