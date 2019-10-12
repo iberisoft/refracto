@@ -21,12 +21,12 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Storage Folder:" />
-            <TextBox Name="StorePath" Grid.Row="0" Grid.Column="1" Text="{Binding StorePath}" />
+            <TextBox Name="StorePath" Grid.Row="0" Grid.Column="1" />
             <Button Name="BrowseStore" Grid.Row="0" Grid.Column="2" Style="{StaticResource BrowseButtonStyle}" />
             <Label Grid.Row="1" Grid.Column="0" Content="Serial Port:" />
             <ComboBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Path=AllSerialPorts}" SelectedItem="{Binding Path=SerialPort}" />
             <Label Grid.Row="2" Grid.Column="0" Content="X Axis Length:" />
-            <xctk:IntegerUpDown Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Minimum="10" Maximum="10000" Value="{Binding Path=XAxisLength}" Increment="10" />
+            <xctk:IntegerUpDown Name="XAxisLength" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Minimum="10" Maximum="10000" Increment="10" />
         </Grid>
     </DockPanel>
 </Window>
