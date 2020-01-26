@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refracto", "Refracto\Refracto.csproj", "{6B466EC9-E0F1-4E5B-8555-8781FBC5CA2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refracto.Services", "Refracto.Services\Refracto.Services.csproj", "{9B7A48E2-62E5-4C03-BC5B-EADEA60D6C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Refracto.Services", "Refracto.Services\Refracto.Services.csproj", "{9B7A48E2-62E5-4C03-BC5B-EADEA60D6C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refracto.Data", "Refracto.Data\Refracto.Data.csproj", "{EA0C7048-82AE-4C20-B384-5AD03709FDAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Refracto.Data", "Refracto.Data\Refracto.Data.csproj", "{EA0C7048-82AE-4C20-B384-5AD03709FDAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refracto.Acquisition", "Refracto.Acquisition\Refracto.Acquisition.csproj", "{73CFA191-4E7F-426E-B285-87067E9D2696}"
 EndProject
