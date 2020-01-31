@@ -10,7 +10,7 @@ namespace Refracto.Acquisition
             builder.Register<IDevice>(context =>
             {
                 var settings = context.Resolve<ISettings>();
-                if (settings.FileStorePath != "")
+                if (settings.SerialPort != "")
                 {
                     return new RsiDevice(settings);
                 }
